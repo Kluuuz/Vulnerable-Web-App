@@ -1,3 +1,12 @@
+<?php
+session_start():
+if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) { 
+    header("Location: ../admin.php"); /* If not logged in, kick the user back to login page */
+    exit(); /* Stop execution so nothing below is served */
+}
+
+?>
+
 <html>
     <head>
         <link rel="stylesheet" href="dash.css" >
@@ -17,7 +26,7 @@
                 </ul>
                 <footer>
                     <img src=assets/logout.png>
-                    <a href="../admin.php">
+                    <a href="../logout.php">
                     Log out</a>
                 </footer>
             </div>

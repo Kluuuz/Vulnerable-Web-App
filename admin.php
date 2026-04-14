@@ -1,4 +1,5 @@
 <?php 
+session_start();
 error_reporting(0); /*para ma kakas ang error sa php nga sabad*/
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") { /*check kung na post ang form*/
@@ -19,7 +20,8 @@ $sql = "SELECT * FROM admin WHERE username = '$username' AND password = '$passwo
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0){
-    header("Location: secret/dashboard.html");
+    $_SESSION('logged in') = true; /*condition na ang session has started*/ 
+    header("Location: secret/dashboard.php");
     exit();
 }
 else{
