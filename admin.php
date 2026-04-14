@@ -20,7 +20,7 @@ $sql = "SELECT * FROM admin WHERE username = '$username' AND password = '$passwo
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0){
-    $_SESSION('logged in') = true; /*condition na ang session has started*/ 
+    $_SESSION('logged_in') = true; /*condition na ang session has started*/ 
     header("Location: secret/dashboard.php");
     exit();
 }
