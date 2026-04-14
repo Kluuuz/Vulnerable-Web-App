@@ -26,7 +26,7 @@ else{
     $error_msg = "Invalid credentials";
 }
 $conn->close();
-
+ 
 }
 ?>
 
